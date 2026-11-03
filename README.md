@@ -1,25 +1,31 @@
-# Application structure
+# Kiosk Gate & Access Control Application
 
-Feature-specific code lives under `features/`. Shared application foundations
-live under `app/`, `core/`, and `shared/`.
+Aplikasi Kiosk berbasis **Flutter** yang dirancang untuk mengelola akses gerbang, identifikasi personel, pemeriksaan kepatuhan atribut (APD/cleanroom), manajemen tamu, serta kontrol operasional berbasis supervisor secara terintegrasi.
+
+---
+
+## 🏗️ Application Structure
+
+Struktur proyek menggunakan pendekatan **Feature-First** untuk skalabilitas modul, dengan fondasi global yang terpusat di `app/`, `core/`, dan `shared/`.
 
 ```text
 lib/
-├── app/                         # App bootstrap and global composition
+├── app/                        # App bootstrap and global composition
 ├── core/
-│   ├── constants/               # Application-wide constants
-│   ├── routing/                 # Route names and navigation setup
-│   ├── theme/                   # Global theme and design tokens
-│   └── widgets/                 # Core widgets used across features
+│   ├── constants/              # Application-wide constants
+│   ├── routing/                # Route names and navigation setup
+│   ├── theme/                  # Global theme and design tokens
+│   └── widgets/                # Core widgets used across features
 ├── features/
-│   ├── gate/                    # Kiosk home screen and gate status
-│   ├── identification/          # Who: face, badge, QR, NIP, fingerprint
-│   ├── attribute_check/         # What: PPE and cleanroom checks
-│   ├── guest/                   # Guest registration and invitations
-│   ├── exit/                    # Exit flow and visit completion
-│   ├── supervisor/              # Protected supervisor operations
-│   └── error_handling/          # Recovery and user-facing error states
-└── shared/                      # Reusable widgets, models, services
+│   ├── gate/                   # Kiosk home screen and gate status
+│   ├── identification/         # Who: face, badge, QR, NIP, fingerprint
+│   ├── attribute_check/        # What: PPE and cleanroom checks
+│   ├── guest/                  # Guest registration and invitations
+│   ├── exit/                   # Exit flow and visit completion
+│   ├── supervisor/             # Protected supervisor operations
+│   └── error_handling/         # Recovery and user-facing error states
+└── shared/                     # Reusable widgets, models, services
+
 ```
 
 As each feature grows, use this internal structure:
